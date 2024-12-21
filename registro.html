@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Elter Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Animações personalizadas */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        .animate-slide-up {
+            animation: slideUp 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-gray-900 via-slate-900 to-gray-900">
+    <!-- Navbar -->
+    <!-- Navbar -->
+<nav class="bg-slate-900/95 border-b border-slate-800 backdrop-blur-sm fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-center justify-between h-20">
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <img src="/img/logo_elter_online_new.png" alt="Logo" class="h-24 w-auto">
+            </div>
+
+            <!-- Menu Principal -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-cyan-400 hover:text-white transition-colors duration-300 text-sm font-medium 
+                                relative after:content-[''] after:absolute after:bottom-0 after:left-0 
+                                after:w-0 after:h-0.5 after:bg-cyan-400 hover:after:w-full 
+                                after:transition-all after:duration-300">Home</a>
+                <a href="#" class="text-cyan-400 hover:text-white transition-colors duration-300 text-sm font-medium 
+                                relative after:content-[''] after:absolute after:bottom-0 after:left-0 
+                                after:w-0 after:h-0.5 after:bg-cyan-400 hover:after:w-full 
+                                after:transition-all after:duration-300">Ranking</a>
+                <a href="https://mega.nz/file/6ItkRRTZ#K56jznqpKqbnKWoct0ucDpK_K71bgBfmUieyNJoRWaA" target="_blank" class="text-cyan-400 hover:text-white transition-colors duration-300 text-sm font-medium 
+                                relative after:content-[''] after:absolute after:bottom-0 after:left-0 
+                                after:w-0 after:h-0.5 after:bg-cyan-400 hover:after:w-full 
+                                after:transition-all after:duration-300">Download</a>
+                <a href="#" class="text-cyan-400 hover:text-white transition-colors duration-300 text-sm font-medium 
+                                relative after:content-[''] after:absolute after:bottom-0 after:left-0 
+                                after:w-0 after:h-0.5 after:bg-cyan-400 hover:after:w-full 
+                                after:transition-all after:duration-300">Forum</a>
+                <a href="#" class="text-cyan-400 hover:text-white transition-colors duration-300 text-sm font-medium 
+                                relative after:content-[''] after:absolute after:bottom-0 after:left-0 
+                                after:w-0 after:h-0.5 after:bg-cyan-400 hover:after:w-full 
+                                after:transition-all after:duration-300">Regras</a>
+            </div>
+
+            <!-- Botões de Ação -->
+            <div class="flex items-center space-x-4">
+                <a href="login.html" class="px-4 py-2 text-sm font-medium text-slate-300 border border-slate-700 
+                       rounded-lg hover:bg-slate-800 hover:border-slate-600 transition duration-300">
+                    Login
+                </a>
+                <a href="registro.html" class="px-4 py-2 text-sm font-medium text-white bg-cyan-600 rounded-lg 
+                             hover:bg-cyan-500 transition duration-300 shadow-lg shadow-cyan-500/20">
+                    Registrar
+                </a>
+                <a href="https://discord.gg/qcTck86y" target="_blank" 
+                   class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-indigo-300 
+                          bg-indigo-500/10 border border-indigo-500/50 rounded-lg 
+                          transition-all duration-300 hover:bg-indigo-500 hover:text-white 
+                          hover:scale-105 shadow-lg shadow-indigo-500/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"/>
+                    </svg>
+                    Discord
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Conteúdo Principal - Formulário de Registro -->
+    <main class="pt-32 pb-20">
+        <div class="max-w-md mx-auto px-4">
+            <div class="bg-slate-800/50 rounded-xl border border-slate-700 p-8">
+                <div class="text-center mb-8">
+                    <h1 class="text-2xl font-bold text-white mb-2">Criar nova conta</h1>
+                    <p class="text-gray-400">Preencha os dados abaixo para se registrar</p>
+                </div>
+
+                <form class="space-y-6">
+                    <!-- Nome de Usuário -->
+                    <div>
+                        <label for="username" class="block text-sm font-medium text-gray-300 mb-2">Nome de Usuário</label>
+                        <input type="text" id="username" name="username" 
+                               class="w-full px-4 py-2.5 bg-slate-900/50 border border-slate-700 
+                                      rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent 
+                                      text-white placeholder-gray-500 transition duration-200"
+                               placeholder="Escolha seu nome de usuário">
+                    </div>
+
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                        <input type="email" id="email" name="email" 
+                               class="w-full px-4 py-2.5 bg-slate-900/50 border border-slate-700 
+                                      rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent 
+                                      text-white placeholder-gray-500 transition duration-200"
+                               placeholder="Seu melhor email">
+                    </div>
+
+                    <!-- Senha -->
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-300 mb-2">Senha</label>
+                        <input type="password" id="password" name="password" 
+                               class="w-full px-4 py-2.5 bg-slate-900/50 border border-slate-700 
+                                      rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent 
+                                      text-white placeholder-gray-500 transition duration-200"
+                               placeholder="Crie uma senha forte">
+                        <p class="mt-1 text-sm text-gray-500">Mínimo 8 caracteres</p>
+                    </div>
+
+                    <!-- Confirmar Senha -->
+                    <div>
+                        <label for="confirm-password" class="block text-sm font-medium text-gray-300 mb-2">Confirmar Senha</label>
+                        <input type="password" id="confirm-password" name="confirm-password" 
+                               class="w-full px-4 py-2.5 bg-slate-900/50 border border-slate-700 
+                                      rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent 
+                                      text-white placeholder-gray-500 transition duration-200"
+                               placeholder="Digite a senha novamente">
+                    </div>
+
+                    <!-- Termos de Uso -->
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                            <input type="checkbox" id="terms" name="terms" 
+                                   class="w-4 h-4 rounded border-slate-700 bg-slate-900/50 
+                                          text-cyan-500 focus:ring-cyan-500">
+                        </div>
+                        <label for="terms" class="ml-2 text-sm text-gray-400">
+                            Eu concordo com os <a href="#" class="text-cyan-400 hover:text-cyan-300">Termos de Uso</a> 
+                            e <a href="#" class="text-cyan-400 hover:text-cyan-300">Política de Privacidade</a>
+                        </label>
+                    </div>
+
+                    <!-- Botão de Registro -->
+                    <button type="submit" 
+                            class="w-full bg-gradient-to-r from-cyan-600 to-cyan-500 
+                                   hover:from-cyan-500 hover:to-cyan-400
+                                   text-white rounded-lg py-3 font-medium
+                                   transition-all duration-300 transform hover:scale-[1.02]
+                                   shadow-lg shadow-cyan-500/20">
+                        Criar Conta
+                    </button>
+
+                    <!-- Link para Login -->
+                    <p class="text-center text-gray-400 text-sm">
+                        Já tem uma conta? 
+                        <a href="login.html" class="text-cyan-400 hover:text-cyan-300">Faça login</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+                <!-- Links Rápidos -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4 text-center">Links Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Download</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Ranking</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Suporte -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4 text-center">Suporte</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Regras</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Banimentos</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Reportar Bug</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-8 pt-8 border-t border-slate-800">
+                <p class="text-gray-400 text-sm text-center">
+                    © 2024 Elter Online. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

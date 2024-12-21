@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elter Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Adiciona fonte personalizada -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Animações personalizadas */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        .animate-slide-up {
+            animation: slideUp 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-gray-900 via-slate-900 to-gray-900">
+    <!-- Navbar -->
+    <nav class="bg-slate-900/95 border-b border-slate-800 backdrop-blur-sm fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <img src="/img/logo_elter_online_new.png" alt="Logo" class="h-24 w-auto">
+                </div>
+
+                <!-- Menu Principal -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-cyan-400 hover:text-white transition-colors duration-300 text-sm font-medium 
+                                    relative after:content-[''] after:absolute after:bottom-0 after:left-0 
+                                    after:w-0 after:h-0.5 after:bg-cyan-400 hover:after:w-full 
+                                    after:transition-all after:duration-300">Home</a>
+                    <a href="#" class="text-cyan-400 hover:text-white transition-colors duration-300 text-sm font-medium 
+                                    relative after:content-[''] after:absolute after:bottom-0 after:left-0 
+                                    after:w-0 after:h-0.5 after:bg-cyan-400 hover:after:w-full 
+                                    after:transition-all after:duration-300">Ranking</a>
+                    <a href="https://mega.nz/file/6ItkRRTZ#K56jznqpKqbnKWoct0ucDpK_K71bgBfmUieyNJoRWaA" target="_blank" class="text-cyan-400 hover:text-white transition-colors duration-300 text-sm font-medium 
+                                    relative after:content-[''] after:absolute after:bottom-0 after:left-0 
+                                    after:w-0 after:h-0.5 after:bg-cyan-400 hover:after:w-full 
+                                    after:transition-all after:duration-300">Download</a>
+                    <a href="#" class="text-cyan-400 hover:text-white transition-colors duration-300 text-sm font-medium 
+                                    relative after:content-[''] after:absolute after:bottom-0 after:left-0 
+                                    after:w-0 after:h-0.5 after:bg-cyan-400 hover:after:w-full 
+                                    after:transition-all after:duration-300">Forum</a>
+                    <a href="#" class="text-cyan-400 hover:text-white transition-colors duration-300 text-sm font-medium 
+                                    relative after:content-[''] after:absolute after:bottom-0 after:left-0 
+                                    after:w-0 after:h-0.5 after:bg-cyan-400 hover:after:w-full 
+                                    after:transition-all after:duration-300">Regras</a>
+                </div>
+
+                <!-- Botões de Ação -->
+                <div class="flex items-center space-x-4">
+                    <a href="login.html" class="px-4 py-2 text-sm font-medium text-slate-300 border border-slate-700 
+                           rounded-lg hover:bg-slate-800 hover:border-slate-600 transition duration-300">
+                        Login
+                    </a>
+                    <a href="registro.html" class="px-4 py-2 text-sm font-medium text-white bg-cyan-600 rounded-lg 
+                                 hover:bg-cyan-500 transition duration-300 shadow-lg shadow-cyan-500/20">
+                        Registrar
+                    </a>
+                    <a href="https://discord.gg/qcTck86y" target="_blank" 
+                       class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-indigo-300 
+                              bg-indigo-500/10 border border-indigo-500/50 rounded-lg 
+                              transition-all duration-300 hover:bg-indigo-500 hover:text-white 
+                              hover:scale-105 shadow-lg shadow-indigo-500/20">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"/>
+                        </svg>
+                        Discord
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20"> <!-- pt-20 para compensar a navbar fixa -->
+        <section class="relative h-screen flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-blue-950/30 to-slate-950">
+                <!-- Efeito de cristais mágicos/energia -->
+                <div class="absolute inset-0 opacity-20"
+                     style="background-image: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.15) 0%, transparent 50%),
+                                            radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 35%),
+                                            radial-gradient(circle at 20% 80%, rgba(124, 58, 237, 0.15) 0%, transparent 35%);">
+                </div>
+                
+                <!-- Efeito de luz superior -->
+                <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"></div>
+            </div>
+            
+            <!-- Conteúdo do Hero -->
+            <div class="relative z-20 text-center max-w-5xl mx-auto px-4 animate-fade-in">
+            
+            <!-- Conteúdo do Hero -->
+            <div class="relative z-20 text-center max-w-5xl mx-auto px-4 animate-fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+                    Elter Online
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-200 mb-12">
+                    Entre em um mundo épico de batalhas PvP, raids emocionantes e conquistas gloriosas
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <a href="https://mega.nz/file/6ItkRRTZ#K56jznqpKqbnKWoct0ucDpK_K71bgBfmUieyNJoRWaA" target="_blank" class="group relative inline-flex items-center gap-3 px-8 py-4 
+                                            bg-gradient-to-r from-cyan-600 to-cyan-500 
+                                            hover:from-cyan-500 hover:to-cyan-400
+                                            text-white rounded-lg transition-all duration-300 
+                                            transform hover:scale-105
+                                            font-medium text-lg shadow-lg shadow-cyan-500/20
+                                            overflow-hidden">
+                        <span class="relative z-10 flex items-center gap-2">
+                            <!-- Ícone de Download -->
+                            <svg xmlns="http://www.w3.org/2000/svg" 
+                                 class="w-6 h-6 transform group-hover:translate-y-1 transition-transform duration-300" 
+                                 fill="none" 
+                                 viewBox="0 0 24 24" 
+                                 stroke="currentColor">
+                                <path stroke-linecap="round" 
+                                      stroke-linejoin="round" 
+                                      stroke-width="2" 
+                                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            Download
+                        </span>
+                        <!-- Efeito de brilho no hover -->
+                        <div class="absolute inset-0 h-full w-1/4 bg-white/20 skew-x-12 
+                                  transform -translate-x-full group-hover:translate-x-[400%] 
+                                  transition-transform duration-700"></div>
+                    </a>
+                    
+                    <a href="https://www.youtube.com/watch?v=QH4OG_A02R8" target="_blank" class="group inline-flex items-center gap-2 px-8 py-4 
+                                 bg-slate-800/80 text-white rounded-lg hover:bg-slate-700/80
+                                 transition-all duration-300 font-medium text-lg 
+                                 border border-slate-600 hover:border-slate-500">
+                        <!-- Ícone de Play -->
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                             class="w-6 h-6 transform group-hover:scale-110 transition-transform duration-300" 
+                             fill="none" 
+                             viewBox="0 0 24 24" 
+                             stroke="currentColor">
+                            <path stroke-linecap="round" 
+                                  stroke-linejoin="round" 
+                                  stroke-width="2" 
+                                  d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                            <path stroke-linecap="round" 
+                                  stroke-linejoin="round" 
+                                  stroke-width="2" 
+                                  d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Assistir Trailer
+                    </a>
+                </div>
+            </div>
+        </section>
+    
+        <section class="py-20 bg-slate-900">
+            <div class="max-w-7xl mx-auto px-4">
+                <!-- Cards de Estatísticas -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+                    <!-- Card de Jogadores Ativos -->
+                    <div class="bg-slate-800/50 p-8 rounded-xl border border-slate-700 
+                                hover:border-cyan-500 transition-all duration-300 
+                                transform hover:-translate-y-2">
+                        <div class="flex items-center justify-center mb-6">
+                            <div class="p-4 bg-cyan-500/10 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                          d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="text-4xl font-bold text-white text-center mb-2">550</div>
+                        <div class="text-lg text-cyan-400 text-center mb-4">Jogadores Ativos</div>
+                        <div class="text-gray-400 text-center text-sm">Última atualização: 5 minutos atrás</div>
+                    </div>
+        
+                    <!-- Card de Guildas Ativas -->
+                    <div class="bg-slate-800/50 p-8 rounded-xl border border-slate-700 
+                                hover:border-cyan-500 transition-all duration-300 
+                                transform hover:-translate-y-2">
+                        <div class="flex items-center justify-center mb-6">
+                            <div class="p-4 bg-cyan-500/10 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                          d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="text-4xl font-bold text-white text-center mb-2">20</div>
+                        <div class="text-lg text-cyan-400 text-center mb-4">Guildas Ativas</div>
+                        <div class="text-gray-400 text-center text-sm">Com mais de 25 membros ativos</div>
+                    </div>
+        
+                    <!-- Card de Guerras de Castelo -->
+                    <div class="bg-slate-800/50 p-8 rounded-xl border border-slate-700 
+                                hover:border-cyan-500 transition-all duration-300 
+                                transform hover:-translate-y-2">
+                        <div class="flex items-center justify-center mb-6">
+                            <div class="p-4 bg-cyan-500/10 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                          d="M8 9v.75l-1-.75v.75l-1-.75v.75L4 9v11h16V9l-2 .75v-.75l-1 .75v-.75l-1 .75v-.75L8 9z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="text-4xl font-bold text-white text-center mb-2">3</div>
+                        <div class="text-lg text-cyan-400 text-center mb-4">Guerras de Castelo</div>
+                        <div class="text-gray-400 text-center text-sm">Realizadas esta semana</div>
+                    </div>
+                </div>
+                
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="border-t border-slate-800/80 w-full mb-16"></div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">
+                        Últimas Atualizações
+                    </h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Notícia 1 -->
+                        <div class="bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700 
+                                    hover:border-cyan-500 transition-all duration-300 group flex flex-col h-full">
+                            <div class="relative h-48 bg-slate-700 flex-shrink-0">
+                                <img src="/api/placeholder/800/400" alt="Evento de Natal" 
+                                     class="w-full h-full object-cover transition-transform duration-300 
+                                            group-hover:scale-110"/>
+                                <div class="absolute top-4 right-4 bg-cyan-500 text-white text-sm px-3 py-1 rounded-full">
+                                    Evento
+                                </div>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                                    Prepare-se para o Evento de Natal!
+                                </h3>
+                                <p class="text-gray-400 mb-4 flex-grow">
+                                    Participe do maior evento natalino já realizado no Elter Online com recompensas exclusivas...
+                                </p>
+                                <div class="flex justify-between items-center mt-auto pt-4 border-t border-slate-700">
+                                    <span class="text-sm text-gray-500">20 Dez 2024</span>
+                                    <a href="#" class="text-cyan-400 hover:text-cyan-300 text-sm font-medium">Ler mais →</a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Notícia 2 -->
+                        <div class="bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700 
+                                    hover:border-cyan-500 transition-all duration-300 group flex flex-col h-full">
+                            <div class="relative h-48 bg-slate-700 flex-shrink-0">
+                                <img src="/api/placeholder/800/400" alt="Nova Dungeon" 
+                                     class="w-full h-full object-cover transition-transform duration-300 
+                                            group-hover:scale-110"/>
+                                <div class="absolute top-4 right-4 bg-indigo-500 text-white text-sm px-3 py-1 rounded-full">
+                                    Atualização
+                                </div>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                                    Nova Dungeon: Lycan
+                                </h3>
+                                <p class="text-gray-400 mb-4 flex-grow">
+                                    Explore a nova dungeon com seus amigos e enfrente desafios únicos...
+                                </p>
+                                <div class="flex justify-between items-center mt-auto pt-4 border-t border-slate-700">
+                                    <span class="text-sm text-gray-500">19 Dez 2024</span>
+                                    <a href="#" class="text-cyan-400 hover:text-cyan-300 text-sm font-medium">Ler mais →</a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Notícia 3 -->
+                        <div class="bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700 
+                                    hover:border-cyan-500 transition-all duration-300 group flex flex-col h-full">
+                            <div class="relative h-48 bg-slate-700 flex-shrink-0">
+                                <img src="/api/placeholder/800/400" alt="Balanceamento de Classes" 
+                                     class="w-full h-full object-cover transition-transform duration-300 
+                                            group-hover:scale-110"/>
+                                <div class="absolute top-4 right-4 bg-rose-500 text-white text-sm px-3 py-1 rounded-full">
+                                    Importante
+                                </div>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                                    Balanceamento Geral de Classes
+                                </h3>
+                                <p class="text-gray-400 mb-4 flex-grow">
+                                    Confira todas as mudanças realizadas no último patch de balanceamento das classes...
+                                </p>
+                                <div class="flex justify-between items-center mt-auto pt-4 border-t border-slate-700">
+                                    <span class="text-sm text-gray-500">18 Dez 2024</span>
+                                    <a href="#" class="text-cyan-400 hover:text-cyan-300 text-sm font-medium">Ler mais →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Seção de Notícias -->
+                    <!-- Botão Ver Mais Notícias -->
+                    <div class="text-center mt-12">
+                        <a href="#" class="inline-flex items-center gap-2 px-6 py-3 
+                                          bg-slate-800 text-white rounded-lg
+                                          border border-slate-600 hover:border-cyan-500
+                                          transition-all duration-300 group">
+                            <span>Ver mais notícias</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" 
+                                 class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" 
+                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+                <!-- Links Rápidos -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4 text-center">Links Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Download</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Ranking</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <!-- Suporte -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4 text-center">Suporte</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Regras</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Forum</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Contribuições</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Copyright -->
+            <div class="mt-8 pt-8 border-t border-slate-800">
+                <p class="text-gray-400 text-sm text-center">
+                    © 2024 Elter Online. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
