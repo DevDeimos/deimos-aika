@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elter Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Adiciona fonte personalizada -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Animações personalizadas */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        .animate-slide-up {
+            animation: slideUp 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-gray-900 via-slate-900 to-gray-900">
+    <!-- Navbar -->
+    <nav class="bg-slate-900/95 border-b border-slate-800 backdrop-blur-sm fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <img src="./img/logo_elter_online_new.png" alt="Logo" class="h-24 w-auto">
+                </div>
+
+                <!-- Menu Principal -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-cyan-400 hover:text-white transition-colors duration-300 text-sm font-medium 
+                                    relative after:content-[''] after:absolute after:bottom-0 after:left-0 
+                                    after:w-0 after:h-0.5 after:bg-cyan-400 hover:after:w-full 
+                                    after:transition-all after:duration-300">Home</a>
+                    <a href="ranking.html" class="text-cyan-400 hover:text-white transition-colors duration-300 text-sm font-medium 
+                                    relative after:content-[''] after:absolute after:bottom-0 after:left-0 
+                                    after:w-0 after:h-0.5 after:bg-cyan-400 hover:after:w-full 
+                                    after:transition-all after:duration-300">Ranking</a>
+                    <a href="https://mega.nz/file/6ItkRRTZ#K56jznqpKqbnKWoct0ucDpK_K71bgBfmUieyNJoRWaA" target="_blank" class="text-cyan-400 hover:text-white transition-colors duration-300 text-sm font-medium 
+                                    relative after:content-[''] after:absolute after:bottom-0 after:left-0 
+                                    after:w-0 after:h-0.5 after:bg-cyan-400 hover:after:w-full 
+                                    after:transition-all after:duration-300">Download</a>
+                    <a href="forum.html" class="text-cyan-400 hover:text-white transition-colors duration-300 text-sm font-medium 
+                                    relative after:content-[''] after:absolute after:bottom-0 after:left-0 
+                                    after:w-0 after:h-0.5 after:bg-cyan-400 hover:after:w-full 
+                                    after:transition-all after:duration-300">Forum</a>
+                    <a href="regras.html" class="text-cyan-400 hover:text-white transition-colors duration-300 text-sm font-medium 
+                                    relative after:content-[''] after:absolute after:bottom-0 after:left-0 
+                                    after:w-0 after:h-0.5 after:bg-cyan-400 hover:after:w-full 
+                                    after:transition-all after:duration-300">Regras</a>
+                </div>
+
+                <!-- Botões de Ação -->
+                <div class="flex items-center space-x-4">
+                    <a href="login.html" class="px-4 py-2 text-sm font-medium text-slate-300 border border-slate-700 
+                           rounded-lg hover:bg-slate-800 hover:border-slate-600 transition duration-300">
+                        Login
+                    </a>
+                    <a href="registro.html" class="px-4 py-2 text-sm font-medium text-white bg-cyan-600 rounded-lg 
+                                 hover:bg-cyan-500 transition duration-300 shadow-lg shadow-cyan-500/20">
+                        Registrar
+                    </a>
+                    <a href="https://discord.gg/qcTck86y" target="_blank" 
+                       class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-indigo-300 
+                              bg-indigo-500/10 border border-indigo-500/50 rounded-lg 
+                              transition-all duration-300 hover:bg-indigo-500 hover:text-white 
+                              hover:scale-105 shadow-lg shadow-indigo-500/20">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"/>
+                        </svg>
+                        Discord
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-28 pb-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">
+                Fórum
+            </h2>
+    
+            <!-- Categorias do Fórum -->
+            <div class="space-y-6">
+                <!-- Anúncios e Notícias -->
+                <div class="bg-slate-800/50 rounded-xl border border-slate-700">
+                    <div class="p-4 border-b border-slate-700">
+                        <h3 class="text-lg font-semibold text-white">Anúncios e Notícias</h3>
+                    </div>
+                    <div class="p-4 space-y-4">
+                        <!-- Tópico Individual -->
+                        <div class="flex items-center justify-between hover:bg-slate-700/30 p-3 rounded-lg transition-colors">
+                            <div class="flex items-center space-x-3">
+                                <div class="bg-cyan-500/20 p-2 rounded-lg">
+                                    <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-medium">Atualização 1.5 - Novas Features</h4>
+                                    <p class="text-gray-400 text-sm">Últimas atualizações e correções do servidor</p>
+                                </div>
+                            </div>
+                            <div class="text-right text-sm">
+                                <p class="text-gray-400">Por: zDev</p>
+                                <p class="text-gray-500">Há 2 horas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Guias e Tutoriais -->
+                <div class="bg-slate-800/50 rounded-xl border border-slate-700">
+                    <div class="p-4 border-b border-slate-700">
+                        <h3 class="text-lg font-semibold text-white">Guias e Tutoriais</h3>
+                    </div>
+                    <div class="p-4 space-y-4">
+                        <div class="flex items-center justify-between hover:bg-slate-700/30 p-3 rounded-lg transition-colors">
+                            <div class="flex items-center space-x-3">
+                                <div class="bg-purple-500/20 p-2 rounded-lg">
+                                    <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-medium">Guia de Classes - Iniciante</h4>
+                                    <p class="text-gray-400 text-sm">Escolha a melhor classe para seu estilo de jogo</p>
+                                </div>
+                            </div>
+                            <div class="text-right text-sm">
+                                <p class="text-gray-400">Por: zDev</p>
+                                <p class="text-gray-500">Há 1 dia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Discussão Geral -->
+                <div class="bg-slate-800/50 rounded-xl border border-slate-700">
+                    <div class="p-4 border-b border-slate-700">
+                        <h3 class="text-lg font-semibold text-white">Discussão Geral</h3>
+                    </div>
+                    <div class="p-4 space-y-4">
+                        <div class="flex items-center justify-between hover:bg-slate-700/30 p-3 rounded-lg transition-colors">
+                            <div class="flex items-center space-x-3">
+                                <div class="bg-green-500/20 p-2 rounded-lg">
+                                    <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-medium">Procuro Guild Ativa</h4>
+                                    <p class="text-gray-400 text-sm">Level 75, Dual, focado em PvP</p>
+                                </div>
+                            </div>
+                            <div class="text-right text-sm">
+                                <p class="text-gray-400">Por: Deimos</p>
+                                <p class="text-gray-500">Há 3 horas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Suporte e Bugs -->
+                <div class="bg-slate-800/50 rounded-xl border border-slate-700">
+                    <div class="p-4 border-b border-slate-700">
+                        <h3 class="text-lg font-semibold text-white">Suporte e Bugs</h3>
+                    </div>
+                    <div class="p-4 space-y-4">
+                        <div class="flex items-center justify-between hover:bg-slate-700/30 p-3 rounded-lg transition-colors">
+                            <div class="flex items-center space-x-3">
+                                <div class="bg-red-500/20 p-2 rounded-lg">
+                                    <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-medium">Problema com Login</h4>
+                                    <p class="text-gray-400 text-sm">Erro ao tentar entrar no servidor</p>
+                                </div>
+                            </div>
+                            <div class="text-right text-sm">
+                                <p class="text-gray-400">Por: Deimos</p>
+                                <p class="text-gray-500">Há 5 horas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Botão Criar Novo Tópico -->
+            <div class="mt-8 text-center">
+                <button class="px-6 py-3 bg-gradient-to-r from-cyan-600 to-cyan-500 
+                             text-white rounded-lg hover:from-cyan-500 hover:to-cyan-400 
+                             transition-all duration-300 font-medium inline-flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                    </svg>
+                    Criar Novo Tópico
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+                <!-- Links Rápidos -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4 text-center">Links Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Download</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Ranking</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <!-- Suporte -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4 text-center">Suporte</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Regras</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Forum</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Contribuições</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Copyright -->
+            <div class="mt-8 pt-8 border-t border-slate-800">
+                <p class="text-gray-400 text-sm text-center">
+                    © 2024 Elter Online. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
