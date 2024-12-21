@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Elter Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Animações personalizadas */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        .animate-slide-up {
+            animation: slideUp 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-gray-900 via-slate-900 to-gray-900">
+    <!-- Navbar -->
+    <!-- Navbar -->
+<nav class="bg-slate-900/95 border-b border-slate-800 backdrop-blur-sm fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-center justify-between h-20">
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <img src="/img/logo_elter_online_new.png" alt="Logo" class="h-24 w-auto">
+            </div>
+
+            <!-- Menu Principal -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-cyan-400 hover:text-white transition-colors duration-300 text-sm font-medium 
+                                relative after:content-[''] after:absolute after:bottom-0 after:left-0 
+                                after:w-0 after:h-0.5 after:bg-cyan-400 hover:after:w-full 
+                                after:transition-all after:duration-300">Home</a>
+                <a href="#" class="text-cyan-400 hover:text-white transition-colors duration-300 text-sm font-medium 
+                                relative after:content-[''] after:absolute after:bottom-0 after:left-0 
+                                after:w-0 after:h-0.5 after:bg-cyan-400 hover:after:w-full 
+                                after:transition-all after:duration-300">Ranking</a>
+                <a href="https://mega.nz/file/6ItkRRTZ#K56jznqpKqbnKWoct0ucDpK_K71bgBfmUieyNJoRWaA" target="_blank" class="text-cyan-400 hover:text-white transition-colors duration-300 text-sm font-medium 
+                                relative after:content-[''] after:absolute after:bottom-0 after:left-0 
+                                after:w-0 after:h-0.5 after:bg-cyan-400 hover:after:w-full 
+                                after:transition-all after:duration-300">Download</a>
+                <a href="#" class="text-cyan-400 hover:text-white transition-colors duration-300 text-sm font-medium 
+                                relative after:content-[''] after:absolute after:bottom-0 after:left-0 
+                                after:w-0 after:h-0.5 after:bg-cyan-400 hover:after:w-full 
+                                after:transition-all after:duration-300">Forum</a>
+                <a href="#" class="text-cyan-400 hover:text-white transition-colors duration-300 text-sm font-medium 
+                                relative after:content-[''] after:absolute after:bottom-0 after:left-0 
+                                after:w-0 after:h-0.5 after:bg-cyan-400 hover:after:w-full 
+                                after:transition-all after:duration-300">Regras</a>
+            </div>
+
+            <!-- Botões de Ação -->
+            <div class="flex items-center space-x-4">
+                <a href="login.html" class="px-4 py-2 text-sm font-medium text-slate-300 border border-slate-700 
+                       rounded-lg hover:bg-slate-800 hover:border-slate-600 transition duration-300">
+                    Login
+                </a>
+                <a href="registro.html" class="px-4 py-2 text-sm font-medium text-white bg-cyan-600 rounded-lg 
+                             hover:bg-cyan-500 transition duration-300 shadow-lg shadow-cyan-500/20">
+                    Registrar
+                </a>
+                <a href="https://discord.gg/qcTck86y" target="_blank" 
+                   class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-indigo-300 
+                          bg-indigo-500/10 border border-indigo-500/50 rounded-lg 
+                          transition-all duration-300 hover:bg-indigo-500 hover:text-white 
+                          hover:scale-105 shadow-lg shadow-indigo-500/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"/>
+                    </svg>
+                    Discord
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Conteúdo Principal - Formulário de Registro -->
+    <section class="pt-28 pb-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">
+                Rankings
+            </h2>
+    
+            <!-- Tabs de Navegação -->
+            <div class="flex justify-center gap-4 mb-8">
+                <button onclick="showRanking('players')" 
+                        id="playersTab"
+                        class="px-6 py-2 text-sm font-medium rounded-lg transition-colors duration-300
+                               bg-cyan-500/10 text-cyan-400 border border-cyan-500/20
+                               hover:bg-cyan-500/20 hover:border-cyan-500/30">
+                    Ranking de Jogadores
+                </button>
+
+                <button onclick="showRanking('guilds')" 
+                        id="guildsTab"
+                        class="px-6 py-2 text-sm font-medium rounded-lg transition-colors duration-300
+                                bg-slate-800/50 text-gray-400 border border-slate-700
+                                hover:bg-slate-800 hover:text-gray-300">
+                    Ranking de Guildas
+                </button>
+
+                <button onclick="showRanking('nations')" 
+                        id="nationsTab"
+                        class="px-6 py-2 text-sm font-medium rounded-lg transition-colors duration-300
+                               bg-slate-800/50 text-gray-400 border border-slate-700
+                               hover:bg-slate-800 hover:text-gray-300">
+                    Ranking de Nações
+                </button>
+            </div>
+            
+            <!-- Subtabs para Períodos do Ranking de Jogadores -->
+            <div id="playersPeriods" class="flex justify-center gap-2 mb-8">
+                <button onclick="showPlayerPeriod('daily')" 
+                        id="dailyTab"
+                        class="px-4 py-1.5 text-sm font-medium rounded-lg transition-colors duration-300
+                               bg-cyan-500/10 text-cyan-400 border border-cyan-500/20
+                               hover:bg-cyan-500/20 hover:border-cyan-500/30">
+                    Diário
+                </button>
+
+                <button onclick="showPlayerPeriod('weekly')" 
+                        id="weeklyTab"
+                        class="px-4 py-1.5 text-sm font-medium rounded-lg transition-colors duration-300
+                               bg-slate-800/50 text-gray-400 border border-slate-700
+                               hover:bg-slate-800 hover:text-gray-300">
+                    Semanal
+                </button>
+
+                <button onclick="showPlayerPeriod('monthly')" 
+                        id="monthlyTab"
+                        class="px-4 py-1.5 text-sm font-medium rounded-lg transition-colors duration-300
+                               bg-slate-800/50 text-gray-400 border border-slate-700
+                               hover:bg-slate-800 hover:text-gray-300">
+                    Mensal
+                </button>
+            </div>
+    
+            <!-- Ranking de Jogadores -->
+            <div id="playersRankingDaily" class="transition-all duration-300">
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse [&_th]:w-40 [&_th]:px-8 [&_th]:py-3 [&_td]:w-40 [&_td]:px-8 [&_td]:py-3">
+                        <thead>
+                            <tr class="bg-slate-800/50">
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-white border-b border-slate-700 w-24">Posição</th>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-white border-b border-slate-700">Player</th>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-white border-b border-slate-700">Classe</th>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-white border-b border-slate-700">Level</th>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-white border-b border-slate-700">PvP</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Exemplo de linhas do ranking de jogadores -->
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-4 py-3 text-cyan-400 font-medium border-b border-slate-800">1º</td>
+                                <td class="px-4 py-3 text-white border-b border-slate-800">Deimos</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">Dual</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">75</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">800</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-4 py-3 text-cyan-400 font-medium border-b border-slate-800">2º</td>
+                                <td class="px-4 py-3 text-white border-b border-slate-800">Bona</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">Guerreiro</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">75</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">600</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-4 py-3 text-cyan-400 font-medium border-b border-slate-800">3º</td>
+                                <td class="px-4 py-3 text-white border-b border-slate-800">Keven</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">Atirador</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">75</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">550</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-4 py-3 text-cyan-400 font-medium border-b border-slate-800">4º</td>
+                                <td class="px-4 py-3 text-white border-b border-slate-800">zDev</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">Templaria</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">75</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">500</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-4 py-3 text-cyan-400 font-medium border-b border-slate-800">5º</td>
+                                <td class="px-4 py-3 text-white border-b border-slate-800">Lindinha</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">Santa</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">75</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">470</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-4 py-3 text-cyan-400 font-medium border-b border-slate-800">6º</td>
+                                <td class="px-4 py-3 text-white border-b border-slate-800">NerJ</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">FC</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">75</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">450</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="playersRankingWeekly" class="hidden transition-all duration-300">
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse [&_th]:w-40 [&_th]:px-8 [&_th]:py-3 [&_td]:w-40 [&_td]:px-8 [&_td]:py-3">
+                        <thead>
+                            <tr class="bg-slate-800/50">
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-white border-b border-slate-700 w-24">Posição</th>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-white border-b border-slate-700">Player</th>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-white border-b border-slate-700">Classe</th>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-white border-b border-slate-700">Level</th>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-white border-b border-slate-700">PvP</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Exemplo de linhas do ranking de jogadores -->
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-4 py-3 text-cyan-400 font-medium border-b border-slate-800">1º</td>
+                                <td class="px-4 py-3 text-white border-b border-slate-800">Deimos</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">Dual</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">75</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">2000</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-4 py-3 text-cyan-400 font-medium border-b border-slate-800">2º</td>
+                                <td class="px-4 py-3 text-white border-b border-slate-800">Bona</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">Guerreiro</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">75</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">1900</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-4 py-3 text-cyan-400 font-medium border-b border-slate-800">3º</td>
+                                <td class="px-4 py-3 text-white border-b border-slate-800">Keven</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">Atirador</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">75</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">1800</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-4 py-3 text-cyan-400 font-medium border-b border-slate-800">4º</td>
+                                <td class="px-4 py-3 text-white border-b border-slate-800">zDev</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">Templaria</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">75</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">1700</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-4 py-3 text-cyan-400 font-medium border-b border-slate-800">5º</td>
+                                <td class="px-4 py-3 text-white border-b border-slate-800">Lindinha</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">Santa</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">75</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">1600</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-4 py-3 text-cyan-400 font-medium border-b border-slate-800">6º</td>
+                                <td class="px-4 py-3 text-white border-b border-slate-800">NerJ</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">FC</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">75</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">1500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="playersRankingMonthly" class="hidden transition-all duration-300">
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse [&_th]:w-40 [&_th]:px-8 [&_th]:py-3 [&_td]:w-40 [&_td]:px-8 [&_td]:py-3">
+                        <thead>
+                            <tr class="bg-slate-800/50">
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-white border-b border-slate-700 w-24">Posição</th>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-white border-b border-slate-700">Player</th>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-white border-b border-slate-700">Classe</th>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-white border-b border-slate-700">Level</th>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-white border-b border-slate-700">PvP</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Exemplo de linhas do ranking de jogadores -->
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-4 py-3 text-cyan-400 font-medium border-b border-slate-800">1º</td>
+                                <td class="px-4 py-3 text-white border-b border-slate-800">Deimos</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">Dual</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">75</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">5000</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-4 py-3 text-cyan-400 font-medium border-b border-slate-800">2º</td>
+                                <td class="px-4 py-3 text-white border-b border-slate-800">Bona</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">Guerreiro</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">75</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">4800</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-4 py-3 text-cyan-400 font-medium border-b border-slate-800">3º</td>
+                                <td class="px-4 py-3 text-white border-b border-slate-800">Keven</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">Atirador</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">75</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">4700</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-4 py-3 text-cyan-400 font-medium border-b border-slate-800">4º</td>
+                                <td class="px-4 py-3 text-white border-b border-slate-800">zDev</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">Templaria</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">75</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">4600</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-4 py-3 text-cyan-400 font-medium border-b border-slate-800">5º</td>
+                                <td class="px-4 py-3 text-white border-b border-slate-800">Lindinha</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">Santa</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">75</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">4500</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-4 py-3 text-cyan-400 font-medium border-b border-slate-800">6º</td>
+                                <td class="px-4 py-3 text-white border-b border-slate-800">NerJ</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">FC</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">75</td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">4400</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="guildsRanking" class="hidden transition-all duration-300">
+                <div class="overflow-x-auto max-w-4xl mx-auto">
+                    <table class="w-full border-collapse [&_th]:w-40 [&_th]:px-8 [&_th]:py-3 [&_td]:w-40 [&_td]:px-8 [&_td]:py-3">
+                        <thead>
+                            <tr class="bg-slate-800/50">
+                                <th class="text-left text-sm font-semibold text-white border-b border-slate-700">Posição</th>
+                                <th class="text-left text-sm font-semibold text-white border-b border-slate-700">Guilda</th>
+                                <th class="text-left text-sm font-semibold text-white border-b border-slate-700">Líder</th>
+                                <th class="text-left text-sm font-semibold text-white border-b border-slate-700">Membros</th>
+                                <th class="text-left text-sm font-semibold text-white border-b border-slate-700">PvP</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="text-cyan-400 font-medium border-b border-slate-800">1º</td>
+                                <td class="text-white border-b border-slate-800">AposentadoS</td>
+                                <td class="text-gray-400 border-b border-slate-800">Deimos</td>
+                                <td class="text-gray-400 border-b border-slate-800">90</td>
+                                <td class="text-gray-400 border-b border-slate-800">600</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="text-cyan-400 font-medium border-b border-slate-800">2º</td>
+                                <td class="text-white border-b border-slate-800">Warriors</td>
+                                <td class="text-gray-400 border-b border-slate-800">Bona</td>
+                                <td class="text-gray-400 border-b border-slate-800">45</td>
+                                <td class="text-gray-400 border-b border-slate-800">500</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="text-cyan-400 font-medium border-b border-slate-800">3º</td>
+                                <td class="text-white border-b border-slate-800">Legends</td>
+                                <td class="text-gray-400 border-b border-slate-800">Keven</td>
+                                <td class="text-gray-400 border-b border-slate-800">48</td>
+                                <td class="text-gray-400 border-b border-slate-800">400</td>
+                            </tr>
+                            <!-- Adicione mais linhas conforme necessário -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    
+            <!-- Ranking de Nações -->
+            <div id="nationsRanking" class="hidden transition-all duration-300">
+                <div class="overflow-x-auto max-w-2xl mx-auto">
+                    <table class="w-full border-collapse [&_th]:w-40 [&_th]:px-8 [&_th]:py-3 [&_td]:w-40 [&_td]:px-8 [&_td]:py-3">
+                        <thead>
+                            <tr class="bg-slate-800/50">
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-white border-b border-slate-700 w-24">Posição</th>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-white border-b border-slate-700">Nação</th>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-white border-b border-slate-700">Relíquias</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Exemplo de linhas do ranking de nações -->
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-4 py-3 text-cyan-400 font-medium border-b border-slate-800">1º</td>
+                                <td class="px-4 py-3 text-white border-b border-slate-800">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-6 h-6 bg-red-500/20 rounded-full flex items-center justify-center">
+                                            <span class="text-green-400 text-xs">E</span>
+                                        </div>
+                                        Exion
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">7</td>
+                            </tr>
+
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-4 py-3 text-cyan-400 font-medium border-b border-slate-800">2º</td>
+                                <td class="px-4 py-3 text-white border-b border-slate-800">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-6 h-6 bg-red-500/20 rounded-full flex items-center justify-center">
+                                            <span class="text-gay-400 text-xs">S</span>
+                                        </div>
+                                        Selest
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">5</td>
+                            </tr>
+
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-4 py-3 text-cyan-400 font-medium border-b border-slate-800">3º</td>
+                                <td class="px-4 py-3 text-white border-b border-slate-800">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-6 h-6 bg-red-500/20 rounded-full flex items-center justify-center">
+                                            <span class="text-yeelow-500 text-xs">A</span>
+                                        </div>
+                                        Ametis
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3 text-gray-400 border-b border-slate-800">4</td>
+                            </tr>
+                            <!-- Adicione mais linhas conforme necessário -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+                <!-- Links Rápidos -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4 text-center">Links Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Download</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Ranking</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Suporte -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4 text-center">Suporte</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Regras</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Banimentos</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Reportar Bug</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm block text-center">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-8 pt-8 border-t border-slate-800">
+                <p class="text-gray-400 text-sm text-center">
+                    © 2024 Elter Online. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+       function showRanking(type) {
+        // Elementos de ranking
+            const playersRankingDaily = document.getElementById('playersRankingDaily');
+            const playersRankingWeekly = document.getElementById('playersRankingWeekly');
+            const playersRankingMonthly = document.getElementById('playersRankingMonthly');
+            const guildsRanking = document.getElementById('guildsRanking');
+            const nationsRanking = document.getElementById('nationsRanking');
+            const playersPeriods = document.getElementById('playersPeriods');
+    
+            // Tabs
+            const playersTab = document.getElementById('playersTab');
+            const guildsTab = document.getElementById('guildsTab');
+            const nationsTab = document.getElementById('nationsTab');
+
+            playersRankingDaily.classList.add('hidden');
+            playersRankingWeekly.classList.add('hidden');
+            playersRankingMonthly.classList.add('hidden');
+            guildsRanking.classList.add('hidden');
+            nationsRanking.classList.add('hidden');
+            playersPeriods.classList.add('hidden');
+    
+            // Resetar estilo de todas as tabs
+            [playersTab, guildsTab, nationsTab].forEach(tab => {
+                tab.classList.remove('bg-cyan-500/10', 'text-cyan-400', 'border-cyan-500/20');
+                tab.classList.add('bg-slate-800/50', 'text-gray-400');
+            });
+            
+    
+            // Mostrar o ranking selecionado
+            if (type === 'players') {
+                playersRankingDaily.classList.remove('hidden');
+                playersPeriods.classList.remove('hidden');
+                playersTab.classList.remove('bg-slate-800/50', 'text-gray-400');
+                playersTab.classList.add('bg-cyan-500/10', 'text-cyan-400', 'border-cyan-500/20');
+            } else if (type === 'guilds') {
+                guildsRanking.classList.remove('hidden');
+                guildsTab.classList.remove('bg-slate-800/50', 'text-gray-400');
+                guildsTab.classList.add('bg-cyan-500/10', 'text-cyan-400', 'border-cyan-500/20');
+            } else {
+                nationsRanking.classList.remove('hidden');
+                nationsTab.classList.remove('bg-slate-800/50', 'text-gray-400');
+                nationsTab.classList.add('bg-cyan-500/10', 'text-cyan-400', 'border-cyan-500/20');
+            }
+        }
+        
+        function showPlayerPeriod(period) {
+            const periods = ['daily', 'weekly', 'monthly'];
+            const tabs = ['dailyTab', 'weeklyTab', 'monthlyTab'];
+            
+            periods.forEach(p => {
+                const element = document.getElementById(`playersRanking${p.charAt(0).toUpperCase() + p.slice(1)}`);
+                element.classList.toggle('hidden', p !== period);
+            });
+            
+            tabs.forEach(tab => {
+                const element = document.getElementById(tab);
+                const isActive = tab === `${period}Tab`;
+                
+                element.classList.toggle('bg-cyan-500/10', isActive);
+                element.classList.toggle('text-cyan-400', isActive);
+                element.classList.toggle('border-cyan-500/20', isActive);
+                element.classList.toggle('bg-slate-800/50', !isActive);
+                element.classList.toggle('text-gray-400', !isActive);
+            });
+        }
+        </script>
+</body>
+</html>
